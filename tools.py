@@ -11,11 +11,11 @@ basic_info_tool  = Tool(
     func=company_search.run,
     description="""
     Use this to gather fundamental information such as:
-    - Name
-    - Location
-    - Founding date
-    - Mission
-    - Values
+    - Name, location, founding date
+    - Mission and values
+    - Products/services
+    - Industry and market segments
+    - Businss model
     
     Sources an be from:
     - Company's official website

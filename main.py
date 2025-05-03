@@ -47,12 +47,10 @@ research_agent = create_tool_calling_agent(
 )
 
 agent_executor = AgentExecutor(agent=research_agent, tools=tools, verbose=True)
-# query = input("What company do you want to know about?")
-query = "beezfm startup's background information"
+query = input("What company do you want to know about?")
 raw_response = agent_executor.invoke({"query":query})
 
 try:
-    # print(raw_response)
     structured_response = parser.parse(raw_response.get("output"))
     print(f"Name: \n {structured_response.name}")
     print(f"Locaton: \n {structured_response.location}")
@@ -60,6 +58,13 @@ try:
     print(f"Mission: \n {structured_response.mission}")
     print("Values: ")
     for value in structured_response.values:
-        print(f"\n {value}")
+        print(f" {value}")
+    print("Products: ")
+    for product in structured_response.products:
+        print(f" {product}")
+    print(f"Industry: \n {structured_response.industry}")
+    print(f"Market Segment: \n {structured_response.market_segment}")
+    print(f"Business model: \n {structured_response.business_model}")
+
 except Exception as e:
     print("Error parsing response",e, "Raw Response - ",raw_response)

@@ -6,3 +6,8 @@ class GeneralInfo(BaseModel):
     founding_date: datetime
     mission: str
     values: list[str]
+    products: list[str]
+    industry: str
+    market_segment: str
+    business_model:str
+    
