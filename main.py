@@ -18,9 +18,10 @@ prompt = ChatPromptTemplate.from_messages(
         (
             "system",
             """
-            You are an expert researcher that does a thorough research on a specified company
-            Answer the user query and use the necessary tools.
-            \n {format_instructions}
+            You are an expert researcher that returns structured data about companies.\n
+            Use tools as needed to gather information.\n
+            After compiling the data into a JSON string, use the tool `save_as_json_tool` to save it.
+            {format_instructions}
             """
         ),
         (
